@@ -205,6 +205,27 @@ public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
         return 0;
+
+
+
+// Método que encuentra el elemento menor en un arreglo
+public int encontrarElementoMenor(int[] arreglo) {
+
+    if (arreglo.length == 0) {
+        throw new IllegalArgumentException("El arreglo no puede estar vacío");
+    }
+
+    int menor = arreglo[0]; // Suponemos que el primero es el menor
+
+    for (int i = 1; i < arreglo.length; i++) {
+        if (arreglo[i] < menor) {
+            menor = arreglo[i];
+        }
+    }
+
+    return menor;
+}
+
     }
 
     // Método que busca un elemento en un arreglo
@@ -212,6 +233,19 @@ public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para buscar un elemento en un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y elemento = 3, el resultado debería ser true.
         return false;
+
+// Método que busca un elemento en un arreglo
+public boolean buscarElemento(int[] arreglo, int elemento) {
+
+    for (int i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] == elemento) {
+            return true; // Si lo encuentra, retorna true
+        }
+    }
+
+    return false; // Si termina el ciclo y no lo encontró
+}
+
     }
 
     // Método que invierte un arreglo
@@ -219,6 +253,22 @@ public int encontrarElementoMayor(int[] arreglo) {
         // TODO: Implementar el método para invertir un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser [5, 4, 3, 2, 1].
         return new int[0];
+
+
+
+// Método que invierte un arreglo
+public int[] invertirArreglo(int[] arreglo) {
+
+    int[] invertido = new int[arreglo.length];
+
+    for (int i = 0; i < arreglo.length; i++) {
+        invertido[i] = arreglo[arreglo.length - 1 - i];
+    }
+
+    return invertido;
+}
+
+
     }
 
     // Método que ordena un arreglo en orden ascendente
