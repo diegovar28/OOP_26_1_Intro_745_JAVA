@@ -591,6 +591,20 @@ public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para validar un correo electrónico.
         // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
         return false;
+
+// Método que valida un correo electrónico
+public boolean validarCorreoElectronico(String correo) {
+
+    if (correo == null) {
+        return false;
+    }
+
+    String patron = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+
+    return correo.matches(patron);
+}
+
+
     }
 
     // Método que calcula el promedio de una lista de números
@@ -599,6 +613,23 @@ public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para calcular el promedio de una lista de números.
         // Ejemplo: Si lista = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
         return 0.0;
+
+// Método que calcula el promedio de una lista de números
+public double promedioLista(List<Integer> lista) {
+
+    if (lista == null || lista.isEmpty()) {
+        return 0;
+    }
+
+    int suma = 0;
+
+    for (int numero : lista) {
+        suma += numero;
+    }
+
+    return (double) suma / lista.size();
+}
+
     }
 
     // Método que convierte un número en su representación binaria
@@ -606,6 +637,13 @@ public int buscarSubcadena(String cadena, String subcadena) {
         // TODO: Implementar el método para convertir un número en su representación binaria.
         // Ejemplo: Si numero = 10, el resultado debería ser "1010".
         return "";
+
+// Método que convierte un número en su representación binaria
+public String convertirABinario(int numero) {
+
+    return Integer.toBinaryString(numero);
+}
+
     }
 
     // Método que convierte un número en su representación hexadecimal
