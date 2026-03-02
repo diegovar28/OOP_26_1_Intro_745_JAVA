@@ -651,6 +651,14 @@ public String convertirABinario(int numero) {
         // TODO: Implementar el método para convertir un número en su representación hexadecimal.
         // Ejemplo: Si numero = 255, el resultado debería ser "FF".
         return "";
+
+// Método que convierte un número en su representación hexadecimal
+public String convertirAHexadecimal(int numero) {
+
+    return Integer.toHexString(numero).toUpperCase();
+}
+
+
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
@@ -667,6 +675,30 @@ public String convertirABinario(int numero) {
         // El método debe retornar un mensaje indicando el resultado del juego.
         // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
         return "";
+
+import java.util.Random;
+
+public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
+
+    String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+    Random random = new Random();
+
+    String eleccionComputadora = opciones[random.nextInt(5)];
+
+    eleccionUsuario = eleccionUsuario.substring(0,1).toUpperCase() 
+                      + eleccionUsuario.substring(1).toLowerCase();
+
+    if (eleccionUsuario.equals(eleccionComputadora)) {
+        return "Empate. La computadora eligió " + eleccionComputadora;
+    }
+
+    boolean ganaUsuario =
+            (eleccionUsuario.equals("Piedra") && 
+                (eleccionComputadora.equals("Tijera") || eleccionComputadora.equals("Lagarto"))) ||
+
+            (eleccionUsuario.equals("Papel") && 
+                (eleccionComputadora.equals("Piedra") ||
+
     }
 
     public String pptls2(String game[]) {
@@ -698,6 +730,8 @@ Rock crushes Scissors
     public String zoodiac(int day, int month) {
         return "";
     }
+
+
 
 
 }
