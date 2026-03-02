@@ -404,6 +404,24 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         // TODO: Implementar el método para rotar un arreglo n posiciones.
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
         return new int[0];
+public int[] rotarArreglo(int[] arreglo, int posiciones) {
+
+    int n = arreglo.length;
+
+    if (n == 0) {
+        return arreglo;
+    }
+
+    posiciones = posiciones % n; // Por si posiciones es mayor que el tamaño
+
+    int[] rotado = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        rotado[i] = arreglo[(i + posiciones) % n];
+    }
+
+    return rotado;
+}
     }
 
 
@@ -413,6 +431,16 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         // TODO: Implementar el método para contar el número de caracteres en una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser 5.
         return 0;
+// Método que cuenta los caracteres en una cadena
+public int contarCaracteres(String cadena) {
+
+    if (cadena == null) {
+        return 0; // Evita error si la cadena es null
+    }
+
+    return cadena.length();
+}
+
     }
 
     // Método que invierte una cadena
@@ -420,6 +448,22 @@ public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         // TODO: Implementar el método para invertir una cadena.
         // Ejemplo: Si cadena = "Hello", el resultado debería ser "olleH".
         return "";
+// Método que invierte una cadena
+public String invertirCadena(String cadena) {
+
+    if (cadena == null) {
+        return null;
+    }
+
+    String invertida = "";
+
+    for (int i = cadena.length() - 1; i >= 0; i--) {
+        invertida += cadena.charAt(i);
+    }
+
+    return invertida;
+}
+
     }
 
     // Método que verifica si una cadena es un palíndromo
