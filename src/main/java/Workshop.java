@@ -276,6 +276,27 @@ public int[] invertirArreglo(int[] arreglo) {
         // TODO: Implementar el método para ordenar un arreglo en orden ascendente.
         // Ejemplo: Si arreglo = [5, 4, 3, 2, 1], el resultado debería ser [1, 2, 3, 4, 5].
         return new int[0];
+
+
+// Método que ordena un arreglo en orden ascendente
+public int[] ordenarArreglo(int[] arreglo) {
+
+    int[] ordenado = arreglo.clone(); // Copiamos el arreglo para no modificar el original
+
+    for (int i = 0; i < ordenado.length - 1; i++) {
+        for (int j = 0; j < ordenado.length - 1 - i; j++) {
+            if (ordenado[j] > ordenado[j + 1]) {
+                // Intercambio
+                int temp = ordenado[j];
+                ordenado[j] = ordenado[j + 1];
+                ordenado[j + 1] = temp;
+            }
+        }
+    }
+
+    return ordenado;
+}
+
     }
 
     // Método que elimina los duplicados de un arreglo
@@ -283,13 +304,99 @@ public int[] invertirArreglo(int[] arreglo) {
         // TODO: Implementar el método para eliminar los duplicados de un arreglo.
         // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
         return new int[0];
+
+// Método que elimina los duplicados de un arreglo
+public int[] eliminarDuplicados(int[] arreglo) {
+
+    int n = arreglo.length;
+    int[] temp = new int[n];
+    int tamaño = 0;
+
+    for (int i = 0; i < n; i++) {
+
+        boolean repetido = false;
+
+        for (int j = 0; j < tamaño; j++) {
+            if (arreglo[i] == temp[j]) {
+                repetido = true;
+                break;
+            }
+        }
+
+        if (!repetido) {
+            temp[tamaño] = arreglo[i];
+            tamaño++;
+        }
     }
+
+    // Crear arreglo final con el tamaño correcto
+    int[] resultado = new int[tamaño];
+    for (int i = 0; i < tamaño; i++) {
+        resultado[i] = temp[i];
+    }
+
+    return resultado;
+}
+
+    }
+
+
 
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         // TODO: Implementar el método para combinar dos arreglos en uno solo.
         // Ejemplo: Si arreglo1 = [1, 2, 3, 4, 5] y arreglo2 = [6, 7, 8], el resultado debería ser [1, 2, 3, 4, 5, 6, 7, 8].
         return new int[0];
+// Método que combina dos arreglos en uno solo
+public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
+
+    int[] combinado = new int[arreglo1.length + arreglo2.length];
+
+    // Copiar elementos del primer arreglo
+    for (int i = 0; i < arreglo1.length; i++) {
+        combinado[i] = arreglo1[i];
+    }
+
+    // Copiar elementos del segundo arreglo
+    for (int i = 0; i < arreglo2.length; i++) {
+        combinado[arreglo1.length + i] = arreglo2[i];
+    }
+
+    return combinado;
+}
+
+
+// Método que combina dos arreglos en uno solo
+public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
+
+    int[] combinado = new int[arreglo1.length + arreglo2.length];
+public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
+
+    int tamaño1 = arreglo1.length;
+    int tamaño2 = arreglo2.length;
+
+    int[] combinado = new int[tamaño1 + tamaño2];
+
+
+    // Copiar el primer arreglo
+    for (int i = 0; i < arreglo1.length; i++) {
+        combinado[i] = arreglo1[i];
+
+ for (int i = 0; i < tamaño1; i++) {
+        combinado[i] = arreglo1[i];
+    }
+
+    // Copiar el segundo arreglo
+    for (int i = 0; i < arreglo2.length; i++) {
+        combinado[arreglo1.length + i] = arreglo2[i];
+
+ for (int i = 0; i < tamaño2; i++) {
+        combinado[tamaño1 + i] = arreglo2[i];
+    }
+
+    return combinado;
+}
+
     }
 
     // Método que rota un arreglo n posiciones
@@ -298,6 +405,8 @@ public int[] invertirArreglo(int[] arreglo) {
         // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
         return new int[0];
     }
+
+
 
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
